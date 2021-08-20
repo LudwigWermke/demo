@@ -5,6 +5,9 @@ import {
   MedicationStatement,
 } from './scannerView/medication-statement';
 
+/**
+ * service to parse xml to the MedicationPlan-class
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -50,7 +53,7 @@ export class MediationPlanParserService {
   }
 
   private getMedicationStatements(doc: Document): Element[] {
-    //XML is case-sensitive as is the medication statement
+    //XML is case-sensitive, as is the medication statement
     let medicationContent = doc.getElementsByTagName('M');
     let length = medicationContent?.length || 0;
     let usableArray: Element[] = [];
@@ -64,18 +67,11 @@ export class MediationPlanParserService {
   }
 
   parseAdminTime(medication: Element) {
-    let morning = medication.getAttribute('m');
-    if (morning) return AdministrationTime.morning;
+    if (medication.hasAttribute('m')) return AdministrationTime.morning;
 
-    let midday = medication.getAttribute('d');
-    if (midday) {
-      return AdministrationTime.midday;
-    }
+    if (medication.hasAttribute('d')) return AdministrationTime.midday;
 
-    let evening = medication.getAttribute('v');
-    if (evening) {
-      return AdministrationTime.evening;
-    }
+    if (medication.hasAttribute('v')) return AdministrationTime.evening;
 
     return AdministrationTime.unknown;
   }
