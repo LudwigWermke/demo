@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MedPlanServiceService } from 'src/app/med-plan-service.service';
 import { MedicationPlan } from 'src/app/scannerView/medication-plan';
 
 @Component({
@@ -7,15 +8,11 @@ import { MedicationPlan } from 'src/app/scannerView/medication-plan';
   styleUrls: ['./med-plan-view.component.css'],
 })
 export class MedPlanViewComponent implements OnInit {
-  constructor() {}
+  constructor(private updateMedPlanService: MedPlanServiceService) {
+    this.plan = this.updateMedPlanService.plan;
+  }
 
-  @Input('plan') plan: MedicationPlan = new MedicationPlan([]); // dummy, but valid plan
-
-  @Output('submitPressed') submitPressed = new EventEmitter();
+  plan: MedicationPlan;
 
   ngOnInit(): void {}
-
-  onClick() {
-    this.submitPressed.emit();
-  }
 }

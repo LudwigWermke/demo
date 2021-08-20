@@ -2,9 +2,10 @@
   <div
     [ngClass]="classesOfClickableComponent"
     style="margin-top: 11px; margin-bottom: 10px"
-    (click)="onClick()"
   >
-    <i class="fa icon-style" [ngClass]="icon"></i>
-    <p style="margin: 0">{{ title }}</p>
+    <a [routerLink]="''">
+      <i class="fa icon-style" [ngClass]="icon"></i>
+      <p style="margin: 0">{{ title }}</p>
+    </a>
   </div>
 </div>

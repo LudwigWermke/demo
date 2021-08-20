@@ -14,6 +14,7 @@ import { ScannerComponent } from './scannerView/scanner/scanner.component';
 import { MedPlanViewComponent } from './medicationPlanView/med-plan-view/med-plan-view.component';
 import { ToggleItemComponent } from './medicationPlanView/toggle-item/toggle-item.component';
 import { SingleMedicationComponent } from './medicationPlanView/single-medication/single-medication.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { SingleMedicationComponent } from './medicationPlanView/single-medicatio
     ToggleItemComponent,
     SingleMedicationComponent,
   ],
-  imports: [BrowserModule, ZXingScannerModule],
+  imports: [BrowserModule, ZXingScannerModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

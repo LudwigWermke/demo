@@ -11,7 +11,11 @@
 >
   <!-- content is below here-->
   <i class="fa fa-qrcode bigIcon"></i
-  ><button class="btn btn-primary marginTop30Px" type="button" (click)="next()">
+  ><button
+    class="btn btn-primary marginTop30Px"
+    type="button"
+    [routerLink]="'scanner'"
+  >
     <i class="fa fa-qrcode iconInButton"></i>Scan starten
   </button>
 </app-content-wrapper>

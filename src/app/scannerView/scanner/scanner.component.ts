@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { BarcodeFormat } from '@zxing/library';
+import { MedPlanServiceService } from 'src/app/med-plan-service.service';
 import { MediationPlanParserService } from 'src/app/mediation-plan-parser.service';
 
 @Component({
@@ -8,7 +10,11 @@ import { MediationPlanParserService } from 'src/app/mediation-plan-parser.servic
   styleUrls: ['./scanner.component.css'],
 })
 export class ScannerComponent implements OnInit {
-  constructor(private service: MediationPlanParserService) {}
+  constructor(
+    private service: MediationPlanParserService,
+    private updateMedPlanService: MedPlanServiceService,
+    private router: Router
+  ) {}
   subTitle =
     'Für genügend Licht sorgen und Kamera so still wie möglich halten.';
 
@@ -23,9 +29,8 @@ export class ScannerComponent implements OnInit {
   onCodeResult(xml: string) {
     try {
       let medications = this.service.parse(xml);
-      console.log(medications);
-      this.hideScanner = true;
-      this.hasMedicationPlan.emit(medications);
+      this.updateMedPlanService.plan = medications;
+      this.router.navigate(['plan']);
     } catch (error) {
       this.hideScanner = true; // automatically displays an error message
     }
