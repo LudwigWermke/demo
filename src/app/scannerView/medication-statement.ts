@@ -15,5 +15,6 @@ export enum AdministrationTime {
   morning = 0,
   midday = 1,
   evening = 2,
-  unknown = 3,
+  night = 3,
+  unknown = 4,
 }

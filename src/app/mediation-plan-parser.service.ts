@@ -27,6 +27,10 @@ export class MediationPlanParserService {
       let statement = this.parseMedicationStatement(medication);
       medicationStatementList.push(statement);
     }
+
+    if (medicationStatementList.length == 0)
+      throw new Error('Empty medication plan or wrong xml-format');
+    console.log('ma list: ', medicationStatementList);
     return new MedicationPlan(medicationStatementList);
   }
 
@@ -72,6 +76,8 @@ export class MediationPlanParserService {
     if (medication.hasAttribute('d')) return AdministrationTime.midday;
 
     if (medication.hasAttribute('v')) return AdministrationTime.evening;
+
+    if (medication.hasAttribute('h')) return AdministrationTime.night;
 
     return AdministrationTime.unknown;
   }

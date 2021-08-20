@@ -8,19 +8,34 @@
   <div class="accordion w-100" role="tablist" id="accordion-1">
     <!-- index is necessary for bootstrap -->
     <toggle-item
+      *ngIf="plan.morning.length > 0"
       [title]="'Morgens'"
       [medStatements]="plan.morning"
       [index]="'0'"
     ></toggle-item>
     <toggle-item
+      *ngIf="plan.midday.length > 0"
       [title]="'Mittags'"
       [medStatements]="plan.midday"
       [index]="'1'"
     ></toggle-item>
     <toggle-item
+      *ngIf="plan.evening.length > 0"
       [title]="'Abends'"
       [medStatements]="plan.evening"
       [index]="'2'"
+    ></toggle-item>
+    <toggle-item
+      *ngIf="plan.night.length > 0"
+      [title]="'Nachts'"
+      [medStatements]="plan.night"
+      [index]="'3'"
+    ></toggle-item>
+    <toggle-item
+      *ngIf="plan.unknown.length > 0"
+      [title]="'Andere'"
+      [medStatements]="plan.unknown"
+      [index]="'4'"
     ></toggle-item>
   </div>
 
