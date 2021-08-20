@@ -39,9 +39,7 @@ describe('MedicationPlan', () => {
     expect(plan.evening.length).toBe(1);
     expect(plan.midday.length).toBe(1);
     expect(plan.unknown.length).toBe(1);
-
     expect(plan.statements.length).toBe(5);
-
     expect(plan.midday[0].pzn).toBe('4');
   });
 });

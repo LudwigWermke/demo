@@ -30,7 +30,6 @@ export class MediationPlanParserService {
 
     if (medicationStatementList.length == 0)
       throw new Error('Empty medication plan or wrong xml-format');
-    console.log('ma list: ', medicationStatementList);
     return new MedicationPlan(medicationStatementList);
   }
 
