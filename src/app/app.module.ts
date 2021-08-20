@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ContentWrapperComponent } from './reusableComponents/content-wrapper/content-wrapper.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContentWrapperComponent
   ],
   imports: [
     BrowserModule
