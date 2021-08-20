@@ -7,6 +7,7 @@ import { SmallNavBarComponent } from './reusableComponents/small-nav-bar/small-n
 import { DefaultViewComponent } from './defaultView/default-view/default-view.component';
 import { BlankButtonViewComponent } from './defaultView/blank-button-view/blank-button-view.component';
 import { OpenCameraViewComponent } from './defaultView/open-camera-view/open-camera-view.component';
+import { ScannerComponent } from './scanner/scanner/scanner.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { OpenCameraViewComponent } from './defaultView/open-camera-view/open-cam
     DefaultViewComponent,
     BlankButtonViewComponent,
     OpenCameraViewComponent,
+    ScannerComponent,
   ],
   imports: [BrowserModule],
   providers: [],
