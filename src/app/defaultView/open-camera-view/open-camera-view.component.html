@@ -1,9 +1,4 @@
-<small-nav-bar
-  [title]="'Scanner'"
-  [icon]="'fa-close'"
-  (wasClicked)="onGoBackPressed()"
->
-</small-nav-bar>
+<small-nav-bar [title]="'Scanner'" [icon]="'fa-close'"> </small-nav-bar>
 
 <app-content-wrapper
   [instructionTitle]="'Medikationsplan'"
@@ -14,7 +9,7 @@
   ><button
     class="btn btn-primary marginTop30Px"
     type="button"
-    [routerLink]="'scanner'"
+    [routerLink]="'../scanner'"
   >
     <i class="fa fa-qrcode iconInButton"></i>Scan starten
   </button>

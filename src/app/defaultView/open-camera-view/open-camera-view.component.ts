@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'open-camera-view',
@@ -7,19 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class OpenCameraViewComponent implements OnInit {
   constructor() {}
-  @Output('nextView') nextView = new EventEmitter();
-  @Output('goBack') goBack = new EventEmitter();
 
   subTitle = `Mithilfe deiner Kamera kannst du ganz
    einfach deinen Medikamentenplan in hypio übertragen.`;
 
-  next() {
-    this.nextView.emit();
-  }
-
   ngOnInit(): void {}
-
-  onGoBackPressed() {
-    this.goBack.emit();
-  }
 }

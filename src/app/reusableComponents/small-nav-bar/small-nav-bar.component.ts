@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'small-nav-bar',
@@ -6,17 +7,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./small-nav-bar.component.css'],
 })
 export class SmallNavBarComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   @Input('title') title = '';
   @Input('icon') icon = '';
 
-  @Output('wasClicked') wasClicked = new EventEmitter();
-
   onClick() {
-    this.wasClicked.emit();
+    this.router.navigate(['']);
   }
 
   // ugly class defs that makes reading the html-template hard

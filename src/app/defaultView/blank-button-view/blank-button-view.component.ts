@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'blank-button-view',
@@ -6,13 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./blank-button-view.component.css'],
 })
 export class BlankButtonViewComponent implements OnInit {
-  @Output('nextView') nextView = new EventEmitter();
-
   constructor() {}
 
   ngOnInit(): void {}
-
-  onOpenCameraView() {
-    this.nextView.emit();
-  }
 }
