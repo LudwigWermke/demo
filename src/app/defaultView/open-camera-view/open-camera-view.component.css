@@ -1,0 +1,14 @@
+.bigIcon {
+  font-size: 168px;
+  color: rgb(33, 37, 41);
+  margin-bottom: 60px;
+}
+
+.marginTop30Px {
+  margin-top: 30px;
+}
+
+.iconInButton {
+  margin-left: 0;
+  margin-right: 10px;
+}

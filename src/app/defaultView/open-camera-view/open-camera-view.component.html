@@ -1,0 +1,17 @@
+<small-nav-bar
+  [title]="'Scanner'"
+  [icon]="'fa-close'"
+  (wasClicked)="onGoBackPressed()"
+>
+</small-nav-bar>
+
+<app-content-wrapper
+  [instructionTitle]="'Medikationsplan'"
+  [instructionSubTitle]="subTitle"
+>
+  <!-- content is below here-->
+  <i class="fa fa-qrcode bigIcon"></i
+  ><button class="btn btn-primary marginTop30Px" type="button" (click)="next()">
+    <i class="fa fa-qrcode iconInButton"></i>Scan starten
+  </button>
+</app-content-wrapper>
