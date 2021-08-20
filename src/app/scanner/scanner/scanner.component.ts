@@ -19,9 +19,9 @@ export class ScannerComponent implements OnInit {
   allowedFormats = [BarcodeFormat.DATA_MATRIX];
 
   onCodeResult(xml: string) {
-    console.log('Hello there');
     try {
       let medications = this.service.parse(xml);
+      console.log(medications);
       this.hideScanner = true;
       this.hasMedicationPlan.emit(medications);
     } catch (error) {
