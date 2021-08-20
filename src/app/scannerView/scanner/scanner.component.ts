@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BarcodeFormat } from '@zxing/library';
 import { MedPlanServiceService } from 'src/app/med-plan-service.service';
@@ -18,10 +18,6 @@ export class ScannerComponent implements OnInit {
   subTitle =
     'Für genügend Licht sorgen und Kamera so still wie möglich halten.';
 
-  @Output('hasMedicationPlan') hasMedicationPlan = new EventEmitter();
-
-  @Output('goBack') goBack = new EventEmitter();
-
   ngOnInit(): void {}
   hideScanner = false;
   allowedFormats = [BarcodeFormat.DATA_MATRIX];
@@ -40,8 +36,7 @@ export class ScannerComponent implements OnInit {
     this.hideScanner = true;
   }
 
-  onGoBackPressed() {
-    this.hideScanner = true; // stops the scan
-    this.goBack.emit();
+  disableScanner() {
+    this.hideScanner = true;
   }
 }

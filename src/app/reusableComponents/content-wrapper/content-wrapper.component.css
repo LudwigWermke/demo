@@ -1,6 +1,8 @@
-.smallMarginBottom {
+h1 {
   margin-bottom: 12px;
+  text-align: center;
 }
+
 .bigMarginBottom {
   margin-bottom: 60px;
 }

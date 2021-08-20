@@ -2,11 +2,7 @@
   <div [ngClass]="classesOuterWrapper">
     <div [ngClass]="classesInnerWrapper">
       <!-- Instruction is rendered here (if available )-->
-      <h1
-        class="text-center"
-        *ngIf="instructionTitle"
-        class="smallMarginBottom"
-      >
+      <h1 *ngIf="instructionTitle">
         {{ instructionTitle }}
       </h1>
 

@@ -13,8 +13,10 @@ export class SmallNavBarComponent implements OnInit {
 
   @Input('title') title = '';
   @Input('icon') icon = '';
+  @Output('onButtonClicked') onButtonClicked = new EventEmitter();
 
   onClick() {
+    this.onButtonClicked.emit();
     this.router.navigate(['']);
   }
 
