@@ -9,6 +9,8 @@ import { MediationPlanParserService } from 'src/app/mediation-plan-parser.servic
 })
 export class ScannerComponent implements OnInit {
   constructor(private service: MediationPlanParserService) {}
+  subTitle =
+    'Für genügend Licht sorgen und Kamera so still wie möglich halten.';
 
   @Output('hasMedicationPlan') hasMedicationPlan = new EventEmitter();
 
@@ -25,7 +27,7 @@ export class ScannerComponent implements OnInit {
       this.hideScanner = true;
       this.hasMedicationPlan.emit(medications);
     } catch (error) {
-      this.hideScanner = true;
+      this.hideScanner = true; // automatically displays an error message
     }
   }
 

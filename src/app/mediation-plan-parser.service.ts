@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { MedicationPlan } from './scanner/medication-plan';
+import { MedicationPlan } from './scannerView/medication-plan';
 import {
   AdministrationTime,
   MedicationStatement,
-} from './scanner/medication-statement';
+} from './scannerView/medication-statement';
 
 @Injectable({
   providedIn: 'root',

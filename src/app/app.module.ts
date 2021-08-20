@@ -10,7 +10,7 @@ import { DefaultViewComponent } from './defaultView/default-view/default-view.co
 import { BlankButtonViewComponent } from './defaultView/blank-button-view/blank-button-view.component';
 import { OpenCameraViewComponent } from './defaultView/open-camera-view/open-camera-view.component';
 
-import { ScannerComponent } from './scanner/scanner/scanner.component';
+import { ScannerComponent } from './scannerView/scanner/scanner.component';
 
 @NgModule({
   declarations: [

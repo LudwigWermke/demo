@@ -6,10 +6,9 @@
 </small-nav-bar>
 <app-content-wrapper
   [instructionTitle]="'QR-Code ins Fenster halten'"
-  [instructionSubTitle]="
-    'Für genügend Licht sorgen und Kamera so still wie möglich halten.'
-  "
+  [instructionSubTitle]="subTitle"
 >
+  <!-- the scanner component-->
   <zxing-scanner
     (scanSuccess)="onCodeResult($event)"
     [formats]="allowedFormats"
@@ -19,6 +18,8 @@
     (scanError)="onErrorDetected()"
   >
   </zxing-scanner>
+
+  <!-- simple error message-->
   <p *ngIf="hideScanner" class="center-text">
     Error! Either invalid code or no access rights to camera.
   </p>
