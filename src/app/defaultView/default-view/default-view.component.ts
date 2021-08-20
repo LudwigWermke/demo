@@ -10,7 +10,7 @@ export class DefaultViewComponent implements OnInit {
   showDefault = true;
   ngOnInit(): void {}
 
-  @Output('change') change = new EventEmitter();
+  @Output('goToNextView') goToNextView = new EventEmitter();
   @Output('goBackToDefault') goBackToDefault = new EventEmitter();
 
   onOpenCameraView() {
@@ -18,7 +18,7 @@ export class DefaultViewComponent implements OnInit {
   }
 
   onOpenScannerView() {
-    this.change.emit();
+    this.goToNextView.emit();
     this.showDefault = true;
   }
 

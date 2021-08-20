@@ -8,18 +8,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // plan: MedicationPlan = new MedicationPlan([]); // default (but valid) object
 
+  plan: string = '';
+
   activeView = 'default';
 
   // sequential list of views
 
   views = ['default', 'scanner', 'medPlan'];
 
-  /*
-  importMedPlan(plan: MedicationPlan) {
+  importMedPlan(plan: string) {
     this.plan = plan;
-  } */
+  }
 
   next() {
+    console.log('next called');
     let a = this.views.indexOf(this.activeView);
     if (a < 0) {
       this.activeView = this.views[0];

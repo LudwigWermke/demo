@@ -1,1 +1,25 @@
-<p>scanner works!</p>
+<small-nav-bar
+  [title]="'Scanner'"
+  (wasClicked)="onGoBackPressed()"
+  icon="fa-close"
+>
+</small-nav-bar>
+<app-content-wrapper
+  [instructionTitle]="'QR-Code ins Fenster halten'"
+  [instructionSubTitle]="
+    'Für genügend Licht sorgen und Kamera so still wie möglich halten.'
+  "
+>
+  <zxing-scanner
+    (scanSuccess)="onCodeResult($event)"
+    [formats]="allowedFormats"
+    *ngIf="!hideScanner"
+    class="camera-field"
+    (camerasNotFound)="onErrorDetected()"
+    (scanError)="onErrorDetected()"
+  >
+  </zxing-scanner>
+  <p *ngIf="hideScanner" class="center-text">
+    Error! Either invalid code or no access rights to camera.
+  </p>
+</app-content-wrapper>

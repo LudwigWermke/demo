@@ -1,0 +1,11 @@
+.camera-field {
+  width: 200px;
+  height: 200px;
+}
+
+@media (min-width: 576px) {
+  .camera-field {
+    width: 300px;
+    height: 300px;
+  }
+}
