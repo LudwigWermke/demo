@@ -1,9 +1,16 @@
 <div class="container" style="height: 100vh" [ngSwitch]="activeView">
   <scanner
-    *ngSwitchCase="'scanner'"
+    *ngSwitchCase="'scanner-view'"
     (goBack)="goBackToDefault()"
     (hasMedicationPlan)="importMedPlan($event); next()"
   >
   </scanner>
+  <med-plan-view
+    *ngSwitchCase="'medication-plan-view'"
+    (submitPressed)="next()"
+    [plan]="plan"
+  >
+  </med-plan-view>
+
   <default-view *ngSwitchDefault (goToNextView)="next()"></default-view>
 </div>

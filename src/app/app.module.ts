@@ -11,6 +11,9 @@ import { BlankButtonViewComponent } from './defaultView/blank-button-view/blank-
 import { OpenCameraViewComponent } from './defaultView/open-camera-view/open-camera-view.component';
 
 import { ScannerComponent } from './scannerView/scanner/scanner.component';
+import { MedPlanViewComponent } from './medicationPlanView/med-plan-view/med-plan-view.component';
+import { ToggleItemComponent } from './medicationPlanView/toggle-item/toggle-item.component';
+import { SingleMedicationComponent } from './medicationPlanView/single-medication/single-medication.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { ScannerComponent } from './scannerView/scanner/scanner.component';
     BlankButtonViewComponent,
     OpenCameraViewComponent,
     ScannerComponent,
+    MedPlanViewComponent,
+    ToggleItemComponent,
+    SingleMedicationComponent,
   ],
   imports: [BrowserModule, ZXingScannerModule],
   providers: [],

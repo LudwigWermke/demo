@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MedicationPlan } from './scannerView/medication-plan';
 
 @Component({
   selector: 'app-root',
@@ -6,22 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  // plan: MedicationPlan = new MedicationPlan([]); // default (but valid) object
+  plan: MedicationPlan = new MedicationPlan([]); // default (but valid) object
 
-  plan: string = '';
-
-  activeView = 'default';
+  activeView = 'default-view';
 
   // sequential list of views
 
-  views = ['default', 'scanner', 'medPlan'];
+  views = ['default-view', 'scanner-view', 'medication-plan-view'];
 
-  importMedPlan(plan: string) {
+  importMedPlan(plan: MedicationPlan) {
     this.plan = plan;
   }
 
   next() {
-    console.log('next called');
+    console.log('next called from: ', this.activeView);
     let a = this.views.indexOf(this.activeView);
     if (a < 0) {
       this.activeView = this.views[0];
@@ -33,6 +32,6 @@ export class AppComponent {
   }
 
   goBackToDefault() {
-    this.activeView = 'default';
+    this.activeView = 'default-view';
   }
 }

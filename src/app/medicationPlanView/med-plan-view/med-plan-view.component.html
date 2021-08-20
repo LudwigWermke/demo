@@ -1,0 +1,40 @@
+<!-- title, was messy, therefore separate file-->
+<small-nav-bar
+  [title]="'Dein Medikamentenplan'"
+  (wasClicked)="onClick()"
+  [icon]="'fa-angle-left'"
+>
+</small-nav-bar>
+
+<!-- The body-->
+<app-content-wrapper>
+  <!-- The actual med-data goes here-->
+  <div class="accordion w-100" role="tablist" id="accordion-1">
+    <!-- index is necessary for bootstrap -->
+    <toggle-item
+      [title]="'Morgens'"
+      [medStatements]="plan.morning"
+      [index]="'0'"
+    ></toggle-item>
+    <toggle-item
+      [title]="'Mittags'"
+      [medStatements]="plan.midday"
+      [index]="'1'"
+    ></toggle-item>
+    <toggle-item
+      [title]="'Abends'"
+      [medStatements]="plan.evening"
+      [index]="'2'"
+    ></toggle-item>
+  </div>
+
+  <!-- Submit Button-->
+  <button
+    class="btn btn-primary"
+    type="button"
+    style="margin-top: 95px"
+    (click)="onClick()"
+  >
+    Übernehmen
+  </button>
+</app-content-wrapper>
